@@ -16,6 +16,19 @@ router.post('/', (req, res) => {
         });
 });
 
+router.put('/update/:id', (req, res) => {
+    const queryText = 'UPDATE pets SET name = $1, breed = $2, color = $3 WHERE id = $4';
+    pool.query(queryText, [req.body.name, req.body.breed, req.body.color, req.params.id])
+        .then((result) => {
+            console.log('update result:', result.rows);
+            res.sendStatus(200);
+        })
+        .catch((err) => {
+            console.log('update error:', err);
+            res.sendStatus(500);
+        });
+});
+
 
 
 
