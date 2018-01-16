@@ -18,6 +18,7 @@ function registerOwner(event) {
         data: data,
         success: function(response) {
             console.log('got register owner', response);
+            // TODO: Get list of owners again
         },
         error: function(err) {
             console.log('error in register owner', err);
