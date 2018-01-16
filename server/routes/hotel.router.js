@@ -31,5 +31,13 @@ router.delete('/:id', (req, res) => {
 
 
 
+router.post('/registerPet', (req,res)=>{
+    const queryString ='INSERT INTO pets (name, breed, color) VALUES ($1, $2, $3)';
+
+
+});
+
+
+
 
 module.exports = router;
