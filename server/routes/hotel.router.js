@@ -8,13 +8,26 @@ router.post('/', (req, res) => {
     pool.query(queryString, [req.body.firstName, req.body.lastName])
         .then(response => {
             console.log('hit post');
-            res.send(response.rows);
+            res.sendStatus(201);
         })
         .catch(err => {
             console.log('hit error of post');
             res.sendStatus(500);
         });
 });
+
+router.get('/', (req, res) => {
+    const queryString = 'SELECT * FROM owners';
+    pool.query(queryString)
+        .then(result => {
+            console.log('Getting Owners Names');
+            res.send(result.rows);
+        })
+        .catch(err => {
+            console.log('hit error of post');
+            res.sendStatus(500);
+        });
+})
 
 
 
