@@ -10,7 +10,7 @@ app.use(express.static('server/public'));
 
 
 // Routes
-
+app.use('/hotel', hotelRouter);
 
 const port = process.env.PORT || 5000;
 //Server Listener
