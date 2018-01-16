@@ -32,9 +32,10 @@ router.delete('/:id', (req, res) => {
 
 
 router.post('/registerPet', (req,res)=>{
-    const queryString ='INSERT INTO pets (name, breed, color) VALUES ($1, $2, $3)';
-
-
+   //const queryText ='INSERT INTO pets (name, breed, color) VALUES ($1, $2, $3) RETURNING id';
+    
+    console.log('came in from client: ', req.body);
+    
 });
 
 

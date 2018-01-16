@@ -4,7 +4,9 @@ function start() {
     console.log('jq sourced');
 
     $('#registerOwner').on('click', registerOwner);
-    $()
+    
+    $('#registerPet').on('click', registerNewPet);
+    
 }
 
 function registerOwner(event) {
@@ -39,3 +41,34 @@ function deletePet() {
         }
     });
   } // end deletePet()
+
+
+  /*****************
+    Register New Pet
+   *****************/
+
+function registerNewPet(event){
+   
+    
+   event.preventDefault();
+    let pet = {
+        name: $('#petName').val(),
+        breed: $('#breed').val(),
+        color: $('#color').val(),
+        owner: 1
+    }
+    console.log('new pet object: ', pet);
+    $.ajax({
+        method: 'POST',
+        url: '/hotel/registerPet',
+        data: pet,
+        success: (response)=>{
+            console.log('POST register pet: ', response);
+        }
+    });
+
+
+
+
+
+}// end registerNewPet
