@@ -22,3 +22,20 @@ CREATE TABLE visits (
  check_in DATE DEFAULT now(),
  check_out DATE DEFAULT now()
 );
+
+
+--JUNCTION TABLES
+CREATE TABLE owners_pets (
+	id SERIAL PRIMARY KEY,
+	owner_id INT REFERENCES "owners",
+	pet_id INT REFERENCES "pets"
+);
+
+
+CREATE TABLE pets_visits (
+	id SERIAL PRIMARY KEY,
+	pet_id INT REFERENCES "pets",
+	visit_id INT REFERENCES "visits"
+);
+
+

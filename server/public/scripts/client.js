@@ -4,6 +4,7 @@ function start() {
     console.log('jq sourced');
 
     $('#registerOwner').on('click', registerOwner);
+    $()
 }
 
 function registerOwner(event) {
@@ -25,3 +26,16 @@ function registerOwner(event) {
         }
     });
 }
+
+// function to delete pet from table and database
+function deletePet() {
+    let petId = $(this).parents('tr').data('id');
+    $.ajax({
+        method: 'DELETE',
+        url: '/hotel/' + petId,
+        success: function(response){
+            console.log('pet deleted:', response);
+            displayOwnersPets();
+        }
+    });
+  } // end deletePet()
