@@ -14,6 +14,7 @@ CREATE TABLE pets (
  color VARCHAR (25)
 );
 
+
 INSERT INTO pets (name, breed, color)
 VALUES ('Ian', 'German Shepherd', 'black');
 
