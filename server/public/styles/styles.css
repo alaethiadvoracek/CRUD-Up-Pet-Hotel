@@ -1,0 +1,74 @@
+html,
+body {
+    width: 800px;
+    height: auto;
+}
+
+input {
+    width: 150px;
+    margin: 3px;
+}
+
+.container {
+    background-color: #fff;
+    box-shadow: 0 2px 3px 3px rgb(83, 83, 83);
+    margin: 20px 35px;
+}
+
+.title {
+    background-color: rgb(146, 160, 175);
+    letter-spacing: 1px;
+    border-bottom: 2px solid #000;
+}
+
+.pawLogo {
+    margin: 10px 10px;
+}
+
+.happy {
+    font-family: 'Pacifico', cursive;
+    font-size: 60px;
+    text-align: center;
+    margin-right: 120px;
+    text-shadow: 3px 4px 5px rgb(100, 100, 100);
+}
+
+.pet {
+    color: rgb(116, 62, 62);
+    margin-right: 15px;
+}
+
+.hotel {
+    margin-left: 270px;
+    margin-top: -10px;
+    letter-spacing: 2px;
+}
+
+.ownerInput {
+    margin: 20px 80px;
+}
+
+.table {
+    margin-top: 50px;
+}
+
+.petRowIn {
+    margin: 20px 5px;
+}
+
+.btnRow {
+    margin: 10px 325px;
+}
+
+button {
+    margin-left: 5px;
+}
+
+label,
+th {
+    font-family: 'Roboto', sans-serif;
+}
+
+thead {
+    margin-left: 10px;
+}

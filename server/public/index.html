@@ -1,51 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="vendors/jquery.js"></script>
-   <script src="scripts/client.js"></script>
-   <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/client.js"></script>
+    <link rel="stylesheet" href="/vendors/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/vendors/bootstrap/dist/js/bootstrap.js">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="./././vendors/font-awesome-4.7.0/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
     <title>The Pet Hotel</title>
 </head>
+
 <body>
-    <h1>Pet Hotel</h1>
-        <form action="">
-            <div id="ownerInfo">
-                <label>First Name</label><input id="firstName" type="text" placeholder="First Name">
-                <label>Last Name</label><input id="lastName" type="text" placeholder="Last Name">
-                <button id="registerOwner">Register</button>
+    <div class="container">
+        <div class="row title">
+            <div class="col-sm-2 icon">
+                <img src="images/paw.png" class="pawLogo" height="100" width="100" />
             </div>
-            <div id="petInfo">
-                <select id="ownerSelect">
-                    <option value="">Select Owner</option>
-                </select>
-                <label>Pet Name</label><input id="petName" type="text" placeholder="Pet Name">
-                <label>Breed</label><input id="breed" type="text" placeholder="Breed">
-                <label>Color</label><input id="color" type="text" placeholder="Color">
-                <button id="registerPet">Add Pet</button>
+            <div class="col-sm-10 titleDiv">
+                <h2 class="happy">
+                    <span class="pet">Happy</span>Paws</h2>
+                <h3 class="hotel">Pet Hôtel</h3>
             </div>
-        </form>
-    <Section id="tableSection">
-        <table>
-            <thead>
-                <tr>
-                    <th>Owner</th>
-                    <th>Pet</th>
-                    <th>Breed</th>
-                    <th>Color</th>
-                    <th>Update</th>
-                    <th>Delete</th>
-                    <th>Check In/Out</th>
-                </tr>
-            </thead>
-            <tbody id="tableBody">
-                
-            </tbody>
+        </div>
+        <div class="row">
+            <form action="">
+                <div class="row ownerInput" id="ownerInfo">
+                    <label>Owner's Name</label>
+                    <input id="firstName" type="text" placeholder="First Name">
+                    <input id="lastName" type="text" placeholder="Last Name">
+                    <button class="btn btn-primary" id="registerOwner">Register</button>
+                </div>
+                <div class="petInput" id="petInfo">
+                    <div class="row petRowIn">
+                        <label>Pet Info</label>
+                        <input id="petName" type="text" placeholder="Pet Name">
+                        <input id="breed" type="text" placeholder="Breed">
+                        <input id="color" type="text" placeholder="Color">
+                        <select id="ownerSelect">
+                            <option value="">Select Owner</option>
+                        </select>
+                        <button class="btn btn-primary" id="registerPet">Add Pet</button>
+                    </div>
+                </div>
+            </form>
+            <hr>
+            <Section id="tableSection">
+                <table class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th>Owner</th>
+                            <th>Pet</th>
+                            <th>Breed</th>
+                            <th>Color</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                            <th>Check In/Out</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
 
-        </table>
+                    </tbody>
 
-    </Section>
+                </table>
+
+            </Section>
+        </div>
 </body>
+
 </html>
