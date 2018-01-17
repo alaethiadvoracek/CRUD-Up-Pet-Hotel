@@ -15,7 +15,7 @@ input {
 .container {
     background-color: #fff;
     box-shadow: 0 2px 3px 3px rgb(83, 83, 83);
-    margin: 20px 35px;
+    margin: 10% 40%;
 }
 
 .title {
@@ -25,14 +25,14 @@ input {
 }
 
 .pawLogo {
-    margin: 10px 10px;
+    margin: 5% 5%;
 }
 
 .happy {
     font-family: 'Pacifico', cursive;
     font-size: 60px;
     text-align: center;
-    margin-right: 120px;
+    margin-right: 15%;
     text-shadow: 3px 4px 5px rgb(100, 100, 100);
 }
 
@@ -42,13 +42,13 @@ input {
 }
 
 .hotel {
-    margin-left: 270px;
+    margin-left: 425px;
     margin-top: -10px;
     letter-spacing: 2px;
 }
 
 .ownerInput {
-    margin: 20px 80px;
+    margin: 2% 25%;
 }
 
 .table {
@@ -56,7 +56,7 @@ input {
 }
 
 .petRowIn {
-    margin: 20px 5px;
+    margin-left: 18%;
 }
 
 .btnRow {

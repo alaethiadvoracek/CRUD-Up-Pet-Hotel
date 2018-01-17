@@ -100,7 +100,6 @@ function updateDropdown(ownersNames) {
     }
 }
 
-
 function updateTable (ownerPetArray) {
     console.log('owner pet array in displayOwnersPets', ownerPetArray);
     let $row;
