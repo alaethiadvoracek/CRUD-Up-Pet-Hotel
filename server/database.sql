@@ -9,10 +9,12 @@ VALUES ('Ian', 'Robertson');
 
 CREATE TABLE pets (
  id SERIAL PRIMARY KEY, 
+ owners_id INT REFERENCES owners,
  name VARCHAR (100) NOT NULL,
  breed VARCHAR (50), 
  color VARCHAR (25)
 );
+
 
 INSERT INTO pets (name, breed, color)
 VALUES ('Ian', 'German Shepherd', 'black');
@@ -25,13 +27,6 @@ CREATE TABLE visits (
 
 
 --JUNCTION TABLES
-CREATE TABLE owners_pets (
-	id SERIAL PRIMARY KEY,
-	owner_id INT REFERENCES "owners",
-	pet_id INT REFERENCES "pets"
-);
-
-
 CREATE TABLE pets_visits (
 	id SERIAL PRIMARY KEY,
 	pet_id INT REFERENCES "pets",
