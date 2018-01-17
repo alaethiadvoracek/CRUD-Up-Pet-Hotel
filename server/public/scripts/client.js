@@ -27,6 +27,43 @@ function registerOwner(event) {
     });
 }
 
+<<<<<<< HEAD
+=======
+//edit pet values
+function updatePet() {
+
+    //get values from inputs
+    let name = $('#petName').val()
+    let breed = $('#breed').val()
+    let color = $('#color').val()
+
+    if (checkInputs(name, breed, color)) {
+        let petId = $(this).val();
+        console.log(petId);
+        let objectToUpdate = {
+            name: name,
+            breed: breed,
+            color: color
+        };
+
+        $.ajax({
+            type: 'PUT',
+            url: '/pets/update/' + petId,
+            data: objectToUpdate,
+            success: function (response) {
+                console.log('response', response);
+                getPets();
+                $('#tableBody').empty();
+
+                $('#name').val('');
+                $('#breed').val('');
+                $('#color').val('');
+            }
+        });//end pet ajax 'PUT'
+    }
+}//end update pets
+
+>>>>>>> origin
 
 // function to delete pet from table and database
 function deletePet() {
