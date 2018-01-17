@@ -16,7 +16,7 @@ router.post('/', (req, res) => {
         });
 });
 
-<<<<<<< HEAD
+
 router.delete('/:id', (req, res) => {
     const queryText = 'DELETE FROM pets WHERE "id"= $1'
     pool.query(queryText, [req.params.id])
@@ -37,7 +37,7 @@ router.post('/registerPet', (req,res)=>{
 
 
 });
-=======
+
 router.get('/', (req, res) => {
     const queryString = 'SELECT * FROM owners';
     pool.query(queryString)
@@ -50,7 +50,6 @@ router.get('/', (req, res) => {
             res.sendStatus(500);
         });
 })
->>>>>>> feature-display-pets
 
 
 
