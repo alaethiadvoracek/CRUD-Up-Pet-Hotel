@@ -65,5 +65,4 @@ router.post('/registerPet', (req, res) => {
 
 });
 
-
 module.exports = router;
