@@ -1,3 +1,6 @@
+td {
+border: 1px red solid;
+}
 html,
 body {
     width: 800px;

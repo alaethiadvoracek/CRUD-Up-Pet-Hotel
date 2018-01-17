@@ -3,6 +3,20 @@ const router = express.Router();
 const pool = require('../modules/pool');
 
 
+router.get('/', (req, res) => {
+    const queryString = 'SELECT * FROM owners';
+    pool.query(queryString)
+        .then(result => {
+            console.log('Getting Owners Names');
+            res.send(result.rows);
+            console.log('did it get here');
+        })
+        .catch(err => {
+            console.log('hit error of post');
+            res.sendStatus(500);
+        });
+});
+
 router.post('/', (req, res) => {
     const queryString = 'INSERT INTO owners (first_name, last_name) VALUES ($1, $2)';
     pool.query(queryString, [req.body.firstName, req.body.lastName])
