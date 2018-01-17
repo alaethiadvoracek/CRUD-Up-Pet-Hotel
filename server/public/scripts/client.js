@@ -2,13 +2,20 @@ $(document).ready(start);
 
 function start() {
     console.log('jq sourced');
-
+    getAllData();
+    getOwnersNames();
     $('#registerOwner').on('click', registerOwner);
     $('#deletePet').on('click', deletePet);
     $('#registerPet').on('click', registerNewPet);
+<<<<<<< HEAD
     $('#editPet').on('click', '.tableBody', editPet);
     getOwnersNames();
     
+=======
+    $('#editPet').on('click', '.tableBody', updatePet);
+    $('#editPet').on('click', '.tableBody', editPet);
+
+>>>>>>> 5f8562601bc5f3b194aee0356ea94322db4d1d24
 }
 
 function registerOwner(event) {
@@ -90,7 +97,7 @@ function registerNewPet(event){
         data: pet,
         success: (response)=>{
             console.log('POST register pet successful: ', response);
-            //Need to call GetAllData function here in order to update the table.
+            getAllData();
         }
     });
 }// end registerNewPet
@@ -115,6 +122,7 @@ function getOwnersNames () {
 function updateDropdown(ownersNames) {
     console.log('hey this is updateDropdown()', ownersNames);
     let dropdown = $('#ownerSelect');
+    
     for (let i = 0; i < ownersNames.length; i++) {
         let newOption = $(`<option value="hi">${ownersNames[i].first_name} ${ownersNames[i].last_name}</option>`);
         newOption.data(ownersNames[i]);
@@ -122,6 +130,17 @@ function updateDropdown(ownersNames) {
     }
 }
 
+function getAllData () {
+    $.ajax({
+        method: "GET",
+        url: '/hotel/collectData',
+        success: function (response) {
+            console.log('response', response);
+            $('#tableBody').empty();
+            updateTable(response);
+        }
+    })
+}
 function updateTable (ownerPetArray) {
     console.log('owner pet array in displayOwnersPets', ownerPetArray);
     let $row;
@@ -129,9 +148,14 @@ function updateTable (ownerPetArray) {
         $row = $('<tr></tr>');
         let fname = ownerPetArray[i].first_name;
         let lname = ownerPetArray[i].last_name;
-        $row.append(`<td>${fname} ${lname}</td>`);
+        $row.append(`
+        <td>${fname} ${lname}</td>
+        <td>${ownerPetArray[i].name}</td>
+        <td>${ownerPetArray[i].breed}</td>
+        <td>${ownerPetArray[i].color}</td>
+        `);
+        $('#tableBody').append($row);
     }
-    $('#tableBody').append($row);
 }
 
 
