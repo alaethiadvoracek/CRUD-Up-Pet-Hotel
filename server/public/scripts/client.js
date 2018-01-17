@@ -4,6 +4,7 @@ function start() {
     console.log('jq sourced');
 
     $('#registerOwner').on('click', registerOwner);
+    getOwnersNames();
 }
 
 function registerOwner(event) {
@@ -19,7 +20,7 @@ function registerOwner(event) {
         success: function(response) {
             console.log('got register owner', response);
             // TODO: Get list of owners again
-            getOwnersNames(response);
+            getOwnersNames();
         },
         error: function(err) {
             console.log('error in register owner', err);
@@ -81,17 +82,34 @@ function getOwnersNames () {
         url: "/hotel",
         success: function (response) {
             $('#tableBody').empty();
-            displayOwnersPets(response);
+            console.log('GET /hotel getOwnersNames', response);
+            updateDropdown(response);
+        },
+        error: function(err) {
+            console.log('err in getOwnersNames', err);
         }
-    })
+    });
 }
-function displayOwnersPets (ownerPetArray) {
-    let $row = $('<tr></tr>');
+
+function updateDropdown(ownersNames) {
+    console.log('hey this is updateDropdown()', ownersNames);
+    let dropdown = $('#ownerSelect');
+    for (let i = 0; i < ownersNames.length; i++) {
+        let newOption = $(`<option value="hi">${ownersNames[i].first_name} ${ownersNames[i].last_name}</option>`);
+        dropdown.append(newOption);
+    }
+}
+
+
+function updateTable (ownerPetArray) {
+    console.log('owner pet array in displayOwnersPets', ownerPetArray);
+    let $row;
     for(let i = 0; i < ownerPetArray.length; i++) {
+        $row = $('<tr></tr>');
         let fname = ownerPetArray[i].first_name;
         let lname = ownerPetArray[i].last_name;
         $row.append(`<td>${fname} ${lname}</td>`);
-        $('#tableBody').append($row);
     }
+    $('#tableBody').append($row);
 }
 
