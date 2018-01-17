@@ -9,7 +9,6 @@ function start() {
     $('#registerPet').on('click', registerNewPet);
     $('#editPet').on('click', '.tableBody', updatePet);
     $('#editPet').on('click', '.tableBody', editPet);
-
 }
 
 function registerOwner(event) {
