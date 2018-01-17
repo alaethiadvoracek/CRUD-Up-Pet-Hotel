@@ -1,11 +1,6 @@
 td {
 border: 1px red solid;
 }
-html,
-body {
-    width: 800px;
-    height: auto;
-}
 
 input {
     width: 150px;
@@ -15,11 +10,21 @@ input {
 .container {
     background-color: #fff;
     box-shadow: 0 2px 3px 3px rgb(83, 83, 83);
-    margin: 10% 40%;
+    /* margin: 10% 40%; */
+    margin-top: 5%
 }
 
 .title {
-    background-color: rgb(146, 160, 175);
+    /* background-color: rgb(146, 160, 175); */
+   background: #8e9eab;
+   /* fallback for old browsers */
+
+   background: -webkit-linear-gradient(to top, #eef2f3, #8e9eab);
+   /* Chrome 10-25, Safari 5.1-6 */
+
+   background: linear-gradient(to top, #eef2f3, #8e9eab);
+   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     letter-spacing: 1px;
     border-bottom: 2px solid #000;
 }
@@ -32,7 +37,7 @@ input {
     font-family: 'Pacifico', cursive;
     font-size: 60px;
     text-align: center;
-    margin-right: 15%;
+    margin-right: 20%;
     text-shadow: 3px 4px 5px rgb(100, 100, 100);
 }
 
@@ -42,7 +47,7 @@ input {
 }
 
 .hotel {
-    margin-left: 425px;
+    margin-left: 42%;
     margin-top: -10px;
     letter-spacing: 2px;
 }

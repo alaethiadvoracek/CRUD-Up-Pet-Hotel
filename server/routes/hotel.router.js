@@ -57,12 +57,20 @@ router.delete('/:id', (req, res) => {
 }) //end delete in database 
 
 
-
-router.post('/registerPet', (req, res) => {
-    const queryString = 'INSERT INTO pets (name, breed, color) VALUES ($1, $2, $3)';
-
-
-
-});
+/**************************************
+   INSERT new pet data into pets table
+ **************************************/
+router.post('/registerPet', (req,res)=>{
+    const queryText = `INSERT INTO pets (owners_id, name, breed, color) VALUES ($1,$2,$3,$4)`;
+    pool.query(queryText, [req.body.owner, req.body.name, req.body.breed, req.body.color])
+                    .then( (result)=>{
+                        console.log('successfully added new pet to table');
+                        res.sendStatus(201);
+                    })
+                    .catch( (err)=>{ 
+                        console.log('error: ', err);
+                        res.sendStatus(500);
+                    });
+});// end Post registerPet
 
 module.exports = router;
