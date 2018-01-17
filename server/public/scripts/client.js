@@ -90,17 +90,16 @@ function registerNewPet(event){
         name: $('#petName').val(),
         breed: $('#breed').val(),
         color: $('#color').val(),
-        owner: 1
+        owner: $('#ownerSelect').children(':selected').data('id')
     }
-
-    console.log('new pet object: ', pet);
+    
     //POST call to server with data object
     $.ajax({
         method: 'POST',
         url: '/hotel/registerPet',
         data: pet,
         success: (response)=>{
-            console.log('POST register pet: ', response);
+            console.log('POST register pet successful: ', response);
         }
     });
 }// end registerNewPet
