@@ -69,9 +69,6 @@ function deletePet() {
         }
     });
   } // end deletePet()
-
-
-
   /*****************
     Register New Pet
    *****************/
@@ -115,7 +112,6 @@ function getOwnersNames () {
         }
     });
 }
-
 function updateDropdown(ownersNames) {
     console.log('hey this is updateDropdown()', ownersNames);
     let dropdown = $('#ownerSelect');
@@ -145,11 +141,13 @@ function updateTable (ownerPetArray) {
         $row = $('<tr></tr>');
         let fname = ownerPetArray[i].first_name;
         let lname = ownerPetArray[i].last_name;
+        let deleteButton = '<button type="button" class="btn btn-danger petDelete">Remove Pet</button>';
         $row.append(`
         <td>${fname} ${lname}</td>
         <td>${ownerPetArray[i].name}</td>
         <td>${ownerPetArray[i].breed}</td>
         <td>${ownerPetArray[i].color}</td>
+        <td>${deleteButton}</td>
         `);
         $('#tableBody').append($row);
     }
