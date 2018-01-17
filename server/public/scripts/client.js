@@ -143,6 +143,7 @@ function updateTable (ownerPetArray) {
         <td>${ownerPetArray[i].name}</td>
         <td>${ownerPetArray[i].breed}</td>
         <td>${ownerPetArray[i].color}</td>
+        <td><button></button>git </td>
         `);
         $('#tableBody').append($row);
     }
