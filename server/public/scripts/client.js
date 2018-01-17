@@ -96,6 +96,7 @@ function updateDropdown(ownersNames) {
     let dropdown = $('#ownerSelect');
     for (let i = 0; i < ownersNames.length; i++) {
         let newOption = $(`<option value="hi">${ownersNames[i].first_name} ${ownersNames[i].last_name}</option>`);
+        newOption.data(ownersNames[i]);
         dropdown.append(newOption);
     }
 }
