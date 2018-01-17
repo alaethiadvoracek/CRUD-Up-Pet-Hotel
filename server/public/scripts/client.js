@@ -4,6 +4,7 @@ function start() {
     console.log('jq sourced');
     $('#registerOwner').on('click', registerOwner);
     $('#deletePet').on('click', deletePet);
+    $('#editPet').on('click', '.tableBody', editPet);
 }
 
 function registerOwner(event) {
