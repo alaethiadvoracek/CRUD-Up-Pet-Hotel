@@ -100,6 +100,7 @@ function registerNewPet(event){
         data: pet,
         success: (response)=>{
             console.log('POST register pet successful: ', response);
+            //Need to call GetAllData function here in order to update the table.
         }
     });
 }// end registerNewPet
