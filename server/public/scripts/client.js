@@ -7,9 +7,9 @@ function start() {
     $('#registerOwner').on('click', registerOwner);
     $('#deletePet').on('click', deletePet);
     $('#registerPet').on('click', registerNewPet);
-    $('#editPet').on('click', '.tableBody', updatePet);
     $('#editPet').on('click', '.tableBody', editPet);
-
+    getOwnersNames();
+    
 }
 
 function registerOwner(event) {
