@@ -138,12 +138,17 @@ function updateTable (ownerPetArray) {
         $row = $('<tr></tr>');
         let fname = ownerPetArray[i].first_name;
         let lname = ownerPetArray[i].last_name;
+        let deleteButton = '<button type="button" class="btn btn-danger petDelete">Remove Pet</button>';
         $row.append(`
         <td>${fname} ${lname}</td>
         <td>${ownerPetArray[i].name}</td>
         <td>${ownerPetArray[i].breed}</td>
         <td>${ownerPetArray[i].color}</td>
+<<<<<<< HEAD
+        <td>${deleteButton}</td>
+=======
         <td><button></button>git </td>
+>>>>>>> 1a2ecbad6ce5dee2c6cb1b0ab0a5cc1293abef5b
         `);
         $('#tableBody').append($row);
     }
