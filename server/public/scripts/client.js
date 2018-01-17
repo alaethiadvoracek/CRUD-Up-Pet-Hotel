@@ -27,6 +27,39 @@ function registerOwner(event) {
     });
 }
 
+function updateKoala() {
+
+    let name = $('#petName').val()
+    let breed = $('#breed').val()
+    let color = $('#color').val()
+
+    if (checkInputs(name, breed, color)) {
+        let petId = $(this).val();
+        console.log(Id);
+        let objectToUpdate = {
+            name: name,
+            breed: breed,
+            color: color
+            
+        };
+        $.ajax({
+            type: 'PUT',
+            url: '/pets/update/' + koalaId,
+            data: objectToUpdate,
+            success: function (response) {
+                console.log('response', response);
+                getKoalas();
+                $('#tableBody').empty();
+
+                $('#name').val('');
+                $('#breed').val('');
+                $('#color').val('');
+            }
+        });
+    }
+}
+
+
 // function to delete pet from table and database
 function deletePet() {
     let petId = $(this).parents('tr').data('id');

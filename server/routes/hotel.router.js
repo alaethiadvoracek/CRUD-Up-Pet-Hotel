@@ -27,24 +27,25 @@ router.put('/update/:id', (req, res) => {
             console.log('update error:', err);
             res.sendStatus(500);
         });
+});//end update 
 
 router.delete('/:id', (req, res) => {
     const queryText = 'DELETE FROM pets WHERE "id"= $1'
     pool.query(queryText, [req.params.id])
         .then((result) => {
-         console.log('query results: ', result);
-        res.sendStatus(201);
-    })
-    .catch((err) => {
-        console.log('error making insert query:', err);
-        res.sendStatus(500);
-    });
-})//end delete in database 
+            console.log('query results: ', result);
+            res.sendStatus(201);
+        })
+        .catch((err) => {
+            console.log('error making insert query:', err);
+            res.sendStatus(500);
+        });
+}) //end delete in database 
 
 
 
-router.post('/registerPet', (req,res)=>{
-    const queryString ='INSERT INTO pets (name, breed, color) VALUES ($1, $2, $3)';
+router.post('/registerPet', (req, res) => {
+    const queryString = 'INSERT INTO pets (name, breed, color) VALUES ($1, $2, $3)';
 
 
 
