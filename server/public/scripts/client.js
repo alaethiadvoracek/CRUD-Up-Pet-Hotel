@@ -7,7 +7,6 @@ function start() {
     $('#registerOwner').on('click', registerOwner);
     $('#deletePet').on('click', deletePet);
     $('#registerPet').on('click', registerNewPet);
-    $('#editPet').on('click', '.tableBody', updatePet);
     $('#editPet').on('click', '.tableBody', editPet);
 
 }
@@ -147,6 +146,7 @@ function updateTable (ownerPetArray) {
         <td>${ownerPetArray[i].name}</td>
         <td>${ownerPetArray[i].breed}</td>
         <td>${ownerPetArray[i].color}</td>
+        <td><button></button>git </td>
         `);
         $('#tableBody').append($row);
     }
