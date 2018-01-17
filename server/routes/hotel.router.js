@@ -43,26 +43,17 @@ router.delete('/:id', (req, res) => {
 }) //end delete in database 
 
 
-
-<<<<<<< HEAD
+/**************************************
+   INSERT new pet data into pets table
+ **************************************/
 router.post('/registerPet', (req,res)=>{
     console.log('came in from client: ', req.body);
     
-    const queryText = `INSERT INTO pets (owners_id, name, breed, color) VALUES ($1,$2,$3,$4)`;
-    pool.query(queryText, [])
-                    .then((result)=>{
-            console.log('result from return:', result.rows);
-            
-        })
-        
-    
-=======
-router.post('/registerPet', (req, res) => {
-    const queryString = 'INSERT INTO pets (name, breed, color) VALUES ($1, $2, $3)';
-
-
-
->>>>>>> master
+    // const queryText = `INSERT INTO pets (owners_id, name, breed, color) VALUES ($1,$2,$3,$4)`;
+    // pool.query(queryText, [])
+    //                 .then((result)=>{
+    //         console.log('result from return:', result.rows);
+       // })
 });
 
 router.get('/', (req, res) => {
@@ -77,8 +68,5 @@ router.get('/', (req, res) => {
             res.sendStatus(500);
         });
 })
-
-
-
 
 module.exports = router;

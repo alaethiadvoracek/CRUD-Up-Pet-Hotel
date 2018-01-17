@@ -88,7 +88,7 @@ function registerNewPet(event){
         name: $('#petName').val(),
         breed: $('#breed').val(),
         color: $('#color').val(),
-        owner: 
+        owner: 1
     }
 
     console.log('new pet object: ', pet);
@@ -101,11 +101,6 @@ function registerNewPet(event){
             console.log('POST register pet: ', response);
         }
     });
-
-
-
-
-
 }// end registerNewPet
 
 // display owners and pets with edit, delete, and checkin info.
@@ -120,7 +115,7 @@ function getOwnersNames () {
         }
     })
 }
-function displayOwnersPets (ownerPetArray) {
+function displayOwnersPets(ownerPetArray) {
     let $row = $('<tr></tr>');
     for(let i = 0; i < ownerPetArray.length; i++) {
         let fname = ownerPetArray[i].first_name;
