@@ -66,9 +66,6 @@ function deletePet() {
         }
     });
   } // end deletePet()
-
-
-
   /*****************
     Register New Pet
    *****************/
@@ -112,7 +109,6 @@ function getOwnersNames () {
         }
     });
 }
-
 function updateDropdown(ownersNames) {
     console.log('hey this is updateDropdown()', ownersNames);
     let dropdown = $('#ownerSelect');
