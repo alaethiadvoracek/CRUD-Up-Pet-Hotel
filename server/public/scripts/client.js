@@ -90,9 +90,7 @@ function getOwnersNames () {
     })
 }
 function displayOwnersPets (ownerPetArray) {
-    console.log('do something');
-    $('#tableBody').empty();
-    let $row = $('<tr>');
+    let $row = $('<tr></tr>');
     for(let i = 0; i < ownerPetArray.length; i++) {
         let fname = ownerPetArray[i].first_name;
         let lname = ownerPetArray[i].last_name;
