@@ -1,8 +1,6 @@
-/* html,
-body {
-    width: auto;
-    height: auto;
-} */
+td {
+border: 1px red solid;
+}
 
 input {
     width: 150px;
