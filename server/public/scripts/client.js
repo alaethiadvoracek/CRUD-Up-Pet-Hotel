@@ -31,6 +31,9 @@ function registerOwner(event) {
             console.log('error in register owner', err);
         }
     });
+
+    $('#firstName').val('').focus();//empty input return focus
+    $('#lastName').val('');//empty input
 }
 
 //edit pet values
@@ -144,11 +147,7 @@ function updateTable (ownerPetArray) {
         <td>${ownerPetArray[i].name}</td>
         <td>${ownerPetArray[i].breed}</td>
         <td>${ownerPetArray[i].color}</td>
-<<<<<<< HEAD
         <td>${deleteButton}</td>
-=======
-        <td><button></button>git </td>
->>>>>>> 1a2ecbad6ce5dee2c6cb1b0ab0a5cc1293abef5b
         `);
         $('#tableBody').append($row);
     }
