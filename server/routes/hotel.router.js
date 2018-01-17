@@ -29,7 +29,6 @@ router.put('/update/:id', (req, res) => {
         });
 });//end update 
 
-
 router.delete('/:id', (req, res) => {
     const queryText = 'DELETE FROM pets WHERE "id"= $1'
     pool.query(queryText, [req.params.id])

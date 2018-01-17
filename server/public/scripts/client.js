@@ -27,8 +27,6 @@ function registerOwner(event) {
     });
 }
 
-<<<<<<< HEAD
-=======
 //edit pet values
 function updatePet() {
 
@@ -48,7 +46,7 @@ function updatePet() {
 
         $.ajax({
             type: 'PUT',
-            url: '/pets/update/' + petId,
+            url: '/hotel/update/' + petId,
             data: objectToUpdate,
             success: function (response) {
                 console.log('response', response);
@@ -62,8 +60,6 @@ function updatePet() {
         });//end pet ajax 'PUT'
     }
 }//end update pets
-
->>>>>>> origin
 
 // function to delete pet from table and database
 function deletePet() {
