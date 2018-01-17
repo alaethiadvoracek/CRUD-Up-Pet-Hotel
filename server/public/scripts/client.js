@@ -122,10 +122,10 @@ function updateDropdown(ownersNames) {
 
 function getAllData () {
     $.ajax({
-        method: "GET",
+        method: 'GET',
         url: '/hotel/collectData',
         success: function (response) {
-            console.log('response', response);
+            console.log('get all data function response: ', response);
             $('#tableBody').empty();
             updateTable(response);
         }

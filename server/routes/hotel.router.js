@@ -84,9 +84,9 @@ router.get('/collectData', (req, res) => {
             res.send(result.rows);
             console.log('did it get here');
         })
-        .catch(err => {
-            console.log('hit error of post');
+        .catch( (err) => {
+            console.log('error caused by collectData GET call', err);
             res.sendStatus(500);
         });
-})
+});
 module.exports = router;
