@@ -31,6 +31,9 @@ function registerOwner(event) {
             console.log('error in register owner', err);
         }
     });
+
+    $('#firstName').val('').focus();//empty input return focus
+    $('#lastName').val('');//empty input
 }
 
 //edit pet values
