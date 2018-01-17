@@ -15,8 +15,7 @@ CREATE TABLE visits (
 
 CREATE TABLE pets (
  id SERIAL PRIMARY KEY, 
- owners_id INT REFERENCES owners,
- visits_id INT REFERENCES visits, 
+ owners_id INT REFERENCES owners, 
  name VARCHAR (100) NOT NULL,
  breed VARCHAR (50), 
  color VARCHAR (25)
