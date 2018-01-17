@@ -72,18 +72,21 @@ router.post('/registerPet', (req,res)=>{
                         res.sendStatus(500);
                     });
 });// end Post registerPet
-
-router.get('/', (req, res) => {
-    const queryString = 'SELECT * FROM owners';
+router.get('/collectData', (req, res) => {
+    const queryString = `
+        SELECT *
+        FROM owners
+        LEFT OUTER JOIN pets ON owners.id = pets.owners_id
+        LEFT OUTER JOIN visits ON visits.pets_id = pets.id;`;
     pool.query(queryString)
         .then(result => {
-            console.log('Getting Owners Names');
+            console.log('get all data', result.rows);
             res.send(result.rows);
+            console.log('did it get here');
         })
         .catch(err => {
             console.log('hit error of post');
             res.sendStatus(500);
         });
 })
-
 module.exports = router;

@@ -2,11 +2,14 @@ $(document).ready(start);
 
 function start() {
     console.log('jq sourced');
-
+    getAllData();
+    getOwnersNames();
     $('#registerOwner').on('click', registerOwner);
     $('#deletePet').on('click', deletePet);
     $('#registerPet').on('click', registerNewPet);
-    getOwnersNames();
+    
+    $('#editPet').on('click', '.tableBody', editPet);
+
 }
 
 function registerOwner(event) {
@@ -31,38 +34,26 @@ function registerOwner(event) {
 }
 
 //edit pet values
-function updatePet() {
+function editPet() {
 
-    //get values from inputs
-    let name = $('#petName').val()
-    let breed = $('#breed').val()
-    let color = $('#color').val()
+    let editDiv = $('#tableBody');
+    let petId = $(this).val().parents().id;
 
-    if (checkInputs(name, breed, color)) {
-        let petId = $(this).val();
-        console.log(petId);
-        let objectToUpdate = {
-            name: name,
-            breed: breed,
-            color: color
-        };
+    $.ajax({
+        url: '/pets/' + petId,
+        method: 'GET',
+        success: function (response) {
+            console.log('got one Koala:', petId, response);
 
-        $.ajax({
-            type: 'PUT',
-            url: '/hotel/update/' + petId,
-            data: objectToUpdate,
-            success: function (response) {
-                console.log('response', response);
-                getPets();
-                $('#tableBody').empty();
+            $('#name').val(response[0].name).focus();
+            $('#breed').val(response[0].breed);
+            $('#color').val(response[0].color);
+            $('#addButton').val(response[0].id);
+        }
+    });
 
-                $('#name').val('');
-                $('#breed').val('');
-                $('#color').val('');
-            }
-        });//end pet ajax 'PUT'
-    }
-}//end update pets
+}
+
 
 // function to delete pet from table and database
 function deletePet() {
@@ -97,8 +88,7 @@ function registerNewPet(event){
         data: pet,
         success: (response)=>{
             console.log('POST register pet successful: ', response);
-            
-            //Need to call GetAllData function here in order to update the table.
+            getAllData();
         }
     });
 }// end registerNewPet
@@ -122,11 +112,24 @@ function getOwnersNames () {
 function updateDropdown(ownersNames) {
     console.log('hey this is updateDropdown()', ownersNames);
     let dropdown = $('#ownerSelect');
+    
     for (let i = 0; i < ownersNames.length; i++) {
         let newOption = $(`<option value="hi">${ownersNames[i].first_name} ${ownersNames[i].last_name}</option>`);
         newOption.data(ownersNames[i]);
         dropdown.append(newOption);
     }
+}
+
+function getAllData () {
+    $.ajax({
+        method: "GET",
+        url: '/hotel/collectData',
+        success: function (response) {
+            console.log('response', response);
+            $('#tableBody').empty();
+            updateTable(response);
+        }
+    })
 }
 function updateTable (ownerPetArray) {
     console.log('owner pet array in displayOwnersPets', ownerPetArray);
@@ -135,9 +138,14 @@ function updateTable (ownerPetArray) {
         $row = $('<tr></tr>');
         let fname = ownerPetArray[i].first_name;
         let lname = ownerPetArray[i].last_name;
-        $row.append(`<td>${fname} ${lname}</td>`);
+        $row.append(`
+        <td>${fname} ${lname}</td>
+        <td>${ownerPetArray[i].name}</td>
+        <td>${ownerPetArray[i].breed}</td>
+        <td>${ownerPetArray[i].color}</td>
+        `);
+        $('#tableBody').append($row);
     }
-    $('#tableBody').append($row);
 }
 
 
