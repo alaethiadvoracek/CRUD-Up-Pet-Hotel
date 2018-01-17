@@ -48,16 +48,18 @@ function deletePet() {
    *****************/
 
 function registerNewPet(event){
-   
-    
+   //stop form from refreshing the page
    event.preventDefault();
+   //create data object to send to server.
     let pet = {
         name: $('#petName').val(),
         breed: $('#breed').val(),
         color: $('#color').val(),
-        owner: 1
+        owner: 
     }
+
     console.log('new pet object: ', pet);
+    //POST call to server with data object
     $.ajax({
         method: 'POST',
         url: '/hotel/registerPet',

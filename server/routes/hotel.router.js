@@ -33,13 +33,12 @@ router.delete('/:id', (req, res) => {
 
 router.post('/registerPet', (req,res)=>{
     console.log('came in from client: ', req.body);
-    let ownerId = req.body.owner;
-    const queryText ='INSERT INTO pets (name, breed, color) VALUES ($1, $2, $3) RETURNING id';
-    pool.query(queryText, [req.body.name, req.body.breed,req.body.color])
-        .then((result)=>{
+    
+    const queryText = `INSERT INTO pets (owners_id, name, breed, color) VALUES ($1,$2,$3,$4)`;
+    pool.query(queryText, [])
+                    .then((result)=>{
             console.log('result from return:', result.rows);
             
-
         })
         
     
