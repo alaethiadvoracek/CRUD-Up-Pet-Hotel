@@ -2,10 +2,10 @@ $(document).ready(start);
 
 function start() {
     console.log('jq sourced');
-
-    $('#registerOwner').on('click', registerOwner);    
-    $('#registerPet').on('click', registerNewPet);    
+    $('#registerOwner').on('click', registerOwner);
     $('#deletePet').on('click', deletePet);
+    $('#registerPet').on('click', registerNewPet);
+}
 
 function registerOwner(event) {
     event.preventDefault();
