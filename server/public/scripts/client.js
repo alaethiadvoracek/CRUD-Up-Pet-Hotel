@@ -75,9 +75,6 @@ function deletePet() {
         }
     });
   } // end deletePet()
-
-
-
   /*****************
     Register New Pet
    *****************/
@@ -100,6 +97,7 @@ function registerNewPet(event){
         data: pet,
         success: (response)=>{
             console.log('POST register pet successful: ', response);
+            
             //Need to call GetAllData function here in order to update the table.
         }
     });
@@ -121,7 +119,6 @@ function getOwnersNames () {
         }
     });
 }
-
 function updateDropdown(ownersNames) {
     console.log('hey this is updateDropdown()', ownersNames);
     let dropdown = $('#ownerSelect');
@@ -131,7 +128,6 @@ function updateDropdown(ownersNames) {
         dropdown.append(newOption);
     }
 }
-
 function updateTable (ownerPetArray) {
     console.log('owner pet array in displayOwnersPets', ownerPetArray);
     let $row;
