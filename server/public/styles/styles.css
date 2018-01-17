@@ -12,7 +12,7 @@ input {
 .container {
     background-color: #fff;
     box-shadow: 0 2px 3px 3px rgb(83, 83, 83);
-    margin: 20px 35px;
+    margin: 20px 135px;
 }
 
 .title {
@@ -39,13 +39,13 @@ input {
 }
 
 .hotel {
-    margin-left: 270px;
+    margin-left: 425px;
     margin-top: -10px;
     letter-spacing: 2px;
 }
 
 .ownerInput {
-    margin: 20px 80px;
+    margin: 20px 300px;
 }
 
 .table {
@@ -53,7 +53,7 @@ input {
 }
 
 .petRowIn {
-    margin: 20px 5px;
+    margin: 20px 200px;
 }
 
 .btnRow {
