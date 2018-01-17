@@ -2,12 +2,8 @@ $(document).ready(start);
 
 function start() {
     console.log('jq sourced');
-
     $('#registerOwner').on('click', registerOwner);
-<<<<<<< HEAD
-    $('#deletePet').on('clikc', deletePet);
-=======
->>>>>>> a710df4edb402f5fffc4bfe170dddfe26b785b96
+    $('#deletePet').on('click', deletePet);
 }
 
 function registerOwner(event) {
